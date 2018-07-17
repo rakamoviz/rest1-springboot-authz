@@ -1,0 +1,88 @@
+{
+  "realm" : "spring-boot-quickstart",
+  "users" : [ {
+    "id" : "745e8519-3074-4ead-a4d5-dc6cf560f0e6",
+    "createdTimestamp" : 1531806867539,
+    "username" : "alice",
+    "enabled" : true,
+    "totp" : false,
+    "emailVerified" : false,
+    "email" : "alice@email.com",
+    "credentials" : [ {
+      "type" : "password",
+      "hashedSaltedValue" : "KiEhLjJn8H3qcQ/pYY6wzLPOn8iTcnQphJyKiU9dqLhPKZjFVS0jroERtymFyjpMFpqcOkOVt85yzHnx1qligw==",
+      "salt" : "DX2jLEQ+o5nLqmh8wgUwhA==",
+      "hashIterations" : 27500,
+      "counter" : 0,
+      "algorithm" : "pbkdf2-sha256",
+      "digits" : 0,
+      "period" : 0,
+      "createdDate" : 1531806877840,
+      "config" : { }
+    } ],
+    "disableableCredentialTypes" : [ "password" ],
+    "requiredActions" : [ ],
+    "realmRoles" : [ "user", "uma_authorization", "offline_access" ],
+    "clientRoles" : {
+      "account" : [ "view-profile", "manage-account" ]
+    },
+    "notBefore" : 0,
+    "groups" : [ ]
+  }, {
+    "id" : "673bb97e-2707-4a6c-96bc-4980de0d7dbb",
+    "createdTimestamp" : 1531806631203,
+    "username" : "bob",
+    "enabled" : true,
+    "totp" : false,
+    "emailVerified" : false,
+    "email" : "bob@email.com",
+    "credentials" : [ {
+      "type" : "password",
+      "hashedSaltedValue" : "NIlKOrQEpOvJGaRomF2W/aHBL4bH0owc1xrZs7B7zJttipKab+jeKZ/wmnI2I7oQBx+A9kTFdna68GqF/NGq5w==",
+      "salt" : "W8V1UxhlmU724GAoEvTg2A==",
+      "hashIterations" : 27500,
+      "counter" : 0,
+      "algorithm" : "pbkdf2-sha256",
+      "digits" : 0,
+      "period" : 0,
+      "createdDate" : 1531806644668,
+      "config" : { }
+    } ],
+    "disableableCredentialTypes" : [ "password" ],
+    "requiredActions" : [ ],
+    "realmRoles" : [ "uma_authorization", "offline_access" ],
+    "clientRoles" : {
+      "account" : [ "view-profile", "manage-account" ]
+    },
+    "notBefore" : 0,
+    "groups" : [ ]
+  }, {
+    "id" : "17e59926-7535-4d62-a129-95055d1a9d43",
+    "createdTimestamp" : 1531806920077,
+    "username" : "jdoe",
+    "enabled" : true,
+    "totp" : false,
+    "emailVerified" : false,
+    "email" : "jdoe@email.com",
+    "credentials" : [ {
+      "type" : "password",
+      "hashedSaltedValue" : "6S/+QE6qEXfDezv0EYsdZvTIEModc82RC0Ocqw1FJkbtoc8UQ5ku67krrJr1oh6PioijfRy4RJawz9fal16Htg==",
+      "salt" : "R1soRaWffhOl1rtutAC5sg==",
+      "hashIterations" : 27500,
+      "counter" : 0,
+      "algorithm" : "pbkdf2-sha256",
+      "digits" : 0,
+      "period" : 0,
+      "createdDate" : 1531806930227,
+      "config" : { }
+    } ],
+    "disableableCredentialTypes" : [ "password" ],
+    "requiredActions" : [ ],
+    "realmRoles" : [ "user", "uma_authorization", "offline_access", "user-premium" ],
+    "clientRoles" : {
+      "account" : [ "view-profile", "manage-account" ]
+    },
+    "notBefore" : 0,
+    "groups" : [ ]
+  } ]
+}

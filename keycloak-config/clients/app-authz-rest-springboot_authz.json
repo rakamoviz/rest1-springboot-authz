@@ -1,0 +1,74 @@
+{
+  "allowRemoteResourceManagement": true,
+  "policyEnforcementMode": "ENFORCING",
+  "resources": [
+    {
+      "name": "Premium Resource",
+      "uri": "/api/premium",
+      "ownerManagedAccess": false,
+      "attributes": {},
+      "_id": "5b6efe59-8230-4f37-8535-9e2ed8d734a0"
+    },
+    {
+      "name": "Joes stuff",
+      "uri": "/api/belongtojdoe",
+      "attributes": {},
+      "_id": "a0c3b731-ec2b-427b-ab1d-29e1e78b78a3"
+    }
+  ],
+  "policies": [
+    {
+      "id": "d6ac59e6-f359-457f-b277-c339d082298c",
+      "name": "Only Premium User Policy",
+      "type": "role",
+      "logic": "POSITIVE",
+      "decisionStrategy": "UNANIMOUS",
+      "config": {
+        "roles": "[{\"id\":\"user-premium\",\"required\":false}]"
+      }
+    },
+    {
+      "id": "a626e533-f50f-4747-929d-c851c0a999c5",
+      "name": "Only User Policy",
+      "type": "role",
+      "logic": "POSITIVE",
+      "decisionStrategy": "UNANIMOUS",
+      "config": {
+        "roles": "[{\"id\":\"user\",\"required\":false}]"
+      }
+    },
+    {
+      "id": "b48d226c-756d-4ac6-a3db-e10a3c7d2b7a",
+      "name": "Only Jdoe",
+      "type": "user",
+      "logic": "POSITIVE",
+      "decisionStrategy": "UNANIMOUS",
+      "config": {
+        "users": "[\"jdoe\"]"
+      }
+    },
+    {
+      "id": "b12e34b5-36b1-402c-b718-7ff58c6f1655",
+      "name": "Premium Resource Permission",
+      "type": "resource",
+      "logic": "POSITIVE",
+      "decisionStrategy": "UNANIMOUS",
+      "config": {
+        "resources": "[\"Premium Resource\"]",
+        "applyPolicies": "[\"Only Premium User Policy\"]"
+      }
+    },
+    {
+      "id": "ab875000-de35-4f0d-9984-83e8f97dc726",
+      "name": "Jdoes stuff permission",
+      "type": "resource",
+      "logic": "POSITIVE",
+      "decisionStrategy": "UNANIMOUS",
+      "config": {
+        "resources": "[\"Joes stuff\"]",
+        "applyPolicies": "[\"Only Jdoe\"]"
+      }
+    }
+  ],
+  "scopes": []
+}

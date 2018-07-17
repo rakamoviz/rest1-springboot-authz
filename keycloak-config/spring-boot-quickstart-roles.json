@@ -1,0 +1,17 @@
+{
+  "id" : "9b59dad1-b3fb-4366-a2db-04feee58551b",
+  "name" : "user",
+  "description" : "User privileges",
+  "composite" : false,
+  "clientRole" : false,
+  "containerId" : "spring-boot-quickstart"
+}
+
+{
+  "id" : "f852ce7f-2f01-4a2d-8027-770e159b606c",
+  "name" : "user-premium",
+  "description" : "User premium privileges",
+  "composite" : false,
+  "clientRole" : false,
+  "containerId" : "spring-boot-quickstart"
+}
