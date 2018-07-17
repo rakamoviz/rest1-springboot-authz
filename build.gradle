@@ -1,0 +1,37 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.3.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+bootJar {
+    baseName = 'gs-rest-service'
+    version =  '0.1.0'
+}
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {  
+    compile("org.keycloak:keycloak-adapter-core:4.1.0.Final")
+    compile("org.springframework.boot:spring-boot-starter-freemarker:2.0.3.RELEASE")
+    compile("org.springframework.boot:spring-boot-starter-web:2.0.3.RELEASE")
+    compile("org.keycloak:keycloak-spring-boot-starter:4.1.0.Final")
+    compile("org.keycloak:keycloak-authz-client:4.1.0.Final")
+    compile("org.apache.httpcomponents:httpclient:4.5.2")
+    compile("org.springframework.boot:spring-boot-starter-parent:2.0.3.RELEASE")
+    testCompile('org.springframework.boot:spring-boot-starter-test')    
+}
