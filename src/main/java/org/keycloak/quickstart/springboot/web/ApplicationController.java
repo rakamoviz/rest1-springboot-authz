@@ -42,4 +42,9 @@ public class ApplicationController {
     public String handlePremiumResource() {
         return "Access Granted";
     }
+
+    @RequestMapping(value = "/api/belongtojdoe", method = RequestMethod.GET)
+    public String handleResourceJdoe() {
+        return "Access Granted";
+    }
 }
