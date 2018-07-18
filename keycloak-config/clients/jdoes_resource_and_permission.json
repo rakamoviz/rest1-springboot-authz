@@ -1,0 +1,30 @@
+[
+  {
+    "name": "JDoes Resource",
+    "uri": "/api/belongtojdoe",
+    "owner": {
+      "name": "jdoe"
+    },
+    "ownerManagedAccess": true,
+    "attributes": {},
+    "_id": "5b81893b-2d9f-4940-b787-ea01b213f6bd",
+    "scopes": [
+      {
+        "name": "jdoes:view"
+      }
+    ]
+  }
+,
+  {
+    "id": "27948a09-36ed-4418-a6d0-f3c7481ea86f",
+    "name": "JDoes View Permission",
+    "type": "scope",
+    "logic": "POSITIVE",
+    "decisionStrategy": "UNANIMOUS",
+    "config": {
+      "resources": "[\"JDoes Resource\"]",
+      "scopes": "[\"jdoes:view\"]",
+      "applyPolicies": "[\"Only Jdoe\"]"
+    }
+  }
+]

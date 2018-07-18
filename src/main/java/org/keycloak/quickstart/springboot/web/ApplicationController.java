@@ -47,4 +47,9 @@ public class ApplicationController {
     public String handleResourceJdoe() {
         return "Access Granted";
     }
+
+    @RequestMapping(value = "/api/forcelebrities", method = RequestMethod.GET)
+    public String handleCelebrity() {
+        return "Access Granted";
+    }
 }
