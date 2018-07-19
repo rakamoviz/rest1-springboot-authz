@@ -1,0 +1,25 @@
+server:
+  connection-timeout: 5000
+  port: 8080
+
+keycloak:
+  realm: spring-boot-quickstart
+  auth-server-url: http://localhost:8180/auth
+  ssl-required: external
+  resource: app-authz-rest-springboot
+  bearer-only: true
+  credentials:
+    secret: 84a547e6-af80-4c1e-8a49-7b46e2c4d302
+  #use-resource-role-mappings: true
+
+  securityConstraints:
+  - authRoles:
+    - user
+    securityCollections:
+    - name: protected
+      patterns:
+      - "/*"
+
+  policy-enforcer-config:
+    enforcement-mode: PERMISSIVE
+    user-managed-access: default

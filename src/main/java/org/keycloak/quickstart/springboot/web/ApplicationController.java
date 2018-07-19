@@ -18,15 +18,25 @@
  */
 package org.keycloak.quickstart.springboot.web;
 
+import javax.servlet.http.HttpServletRequest;
+import org.keycloak.KeycloakSecurityContext;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.keycloak.representations.adapters.config.AdapterConfig;
 
 /**
  * @author <a href="mailto:psilva@redhat.com">Pedro Igor</a>
  */
 @RestController
 public class ApplicationController {
+
+    @Autowired
+    private HttpServletRequest request;
+
+    @Autowired
+    private AdapterConfig adapterConfig;
 
     @RequestMapping(value = "/api/resourcea", method = RequestMethod.GET)
     public String handleResourceA() {
@@ -45,11 +55,19 @@ public class ApplicationController {
 
     @RequestMapping(value = "/api/belongtojdoe", method = RequestMethod.GET)
     public String handleResourceJdoe() {
+        KeycloakSecurityContext ksc = getKeycloakSecurityContext();
+        System.out.println("getPolicyEnforcerConfig.getUserManagedAccess : " + adapterConfig.getPolicyEnforcerConfig().getUserManagedAccess());
+        System.out.println("KeycloakSecurityContext : " + ksc);
+        System.out.println("AuthorizationContext : " + ksc.getAuthorizationContext());
         return "Access Granted";
     }
 
     @RequestMapping(value = "/api/forcelebrities", method = RequestMethod.GET)
     public String handleCelebrity() {
         return "Access Granted";
+    }
+
+    private KeycloakSecurityContext getKeycloakSecurityContext() {
+        return (KeycloakSecurityContext) request.getAttribute(KeycloakSecurityContext.class.getName());
     }
 }
